@@ -1,6 +1,8 @@
 import React from "react";
-import Potato from "./Potato";
 
+function Potato() {
+  return <h1>I like potato</h1>;
+}
 function App() { //App 컴포넌트 정의의
   return (
       <div>
