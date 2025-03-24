@@ -1,15 +1,22 @@
 import React from "react";
 
-function Potato() {
-  return <h1>I like potato</h1>;
-}
-function App() { //App 컴포넌트 정의의
-  return (
-      <div>
-        <h1>하현상 바보</h1>
-        <Potato />
-      </div>
-    ); //App 컴포넌트가 HTML 반환
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: [],
+  };
+
+  componentDidMount() {
+    //영화 데이터 로딩
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 6000);
+  }
+
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? 'Loading...' : 'We are ready'}</div>;
+  }
 }
 
 export default App;
